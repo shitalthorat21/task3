@@ -1,5 +1,5 @@
 mixin userForm()
-  form(action="/add" method="POST" class="card")
+  form(action="/users" method="POST" class="card")
     br
     br
     label(for="name") Name
@@ -22,10 +22,20 @@ mixin userForm()
     input(type="text" name="state")
     br
     br
-    label(for="email") Etate
+    label(for="email") Email
     br
     input(type="text" name="email")
     br
     br
     input(type="submit" value="save" class="button")
+    br
+    br
+    input(type="submit" value="addUser" class="button")
+    br
+    br
+    input(type="submit" value="editUser" class="button")
+    br
+    br
+    input(type="submit" value="deleteUser" class="button")
+
     
