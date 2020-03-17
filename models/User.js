@@ -1,7 +1,7 @@
 
 const mongoose=require('mongoose');
 mongoose.Promise=global.Promise;
-// const slug=require('slugs');
+const slug=require('slugs');
 let Schema=mongoose.Schema;
 
 let userSchema=new Schema({
@@ -18,6 +18,12 @@ let userSchema=new Schema({
     state:{
          type:String,
         }    
-})
+});
+userSchema.pre('save',function(next){
+    if(!this.isModified('name')){
+        next();
+        return;
+    }
+});
 
 module.exports=mongoose.model('User',userSchema);
