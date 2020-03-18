@@ -16,10 +16,10 @@ let userSchema=new Schema({
         },
     state:{
          type:String,
-        },
+         },
     email:{
             type:String,
-           }        
+          }        
 });
 userSchema.pre('save',function(next){
     if(!this.isModified('email')){
