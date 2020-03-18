@@ -15,22 +15,22 @@ exports.addUser=(req,res)=>{
     res.render('editUser',{title:'Add User'});
 }
 
-exports.createUser=async (req,res)=>{
+exports.createUser=(req,res)=>{
     const user=new User(req.body);
-    await user.save();    
+     user.save();    
 }
 
-exports.addData=async (req,res)=>{
-    console.log(req.body);
-    const user=await (new User(req.body)).save();
-    userData.push(user);
-    console.log(userData);    
-}
+// exports.addData=(req,res)=>{
+//     console.log(req.body);
+//     const user= (new User(req.body)).save();
+//     userData.push(user);
+//     console.log(userData);    
+// }
 
-exports.displayUser=(req,res)=>{
-    console.log(userData);
-    res.render('users',{arr:userData});
-}
+// exports.displayUser=(req,res)=>{
+//     console.log(userData);
+//     res.render('users',{arr:userData});
+// }
 
 
 
