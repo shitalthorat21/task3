@@ -1,5 +1,5 @@
-mixin userForm()
-  form(action="/users" method="POST" class="card")
+mixin userForm(user={})
+  form(action="/add" method="POST" class="card")
     br
     br
     label(for="name") Name

@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 mongoose.Promise=global.Promise;
 
 const MongoClient = require('mongodb').MongoClient;
-MongoClient.connect('mongodb://localhost:27017/qliktagInterns', function(err, db) {
+MongoClient.connect('mongodb://localhost:27017/qliktagInterns1', function(err, db) {
   if (err) throw err;
-  const dbo = db.db("qliktagInterns");
+  const dbo = db.db("qliktagInterns1");
     dbo.createCollection("users", function(err, res) {
     if (err) throw err;
     console.log("Collection created!");

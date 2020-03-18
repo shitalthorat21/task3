@@ -1,4 +1,3 @@
-
 const mongoose=require('mongoose');
 mongoose.Promise=global.Promise;
 const slug=require('slugs');
@@ -17,13 +16,18 @@ let userSchema=new Schema({
         },
     state:{
          type:String,
-        }    
+        },
+    email:{
+            type:String,
+           }        
 });
 userSchema.pre('save',function(next){
-    if(!this.isModified('name')){
+    if(!this.isModified('email')){
         next();
         return;
     }
+    this.slug=slug(this.email);
+    next();
 });
 
 module.exports=mongoose.model('User',userSchema);
