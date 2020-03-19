@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 mongoose.Promise=global.Promise;
 
 const MongoClient = require('mongodb').MongoClient;
-MongoClient.connect('mongodb://localhost:27017/qliktagInterns1', function(err, db) {
+MongoClient.connect('mongodb://localhost:27017/qliktagInterns1',  { useUnifiedTopology: true }, function(err, db) {
   if (err) throw err;
   const dbo = db.db("qliktagInterns1");
     dbo.createCollection("users", function(err, res) {
@@ -11,12 +11,8 @@ MongoClient.connect('mongodb://localhost:27017/qliktagInterns1', function(err, d
     db.close();
   });
 });
-
-
 require('dotenv').config({ path: '.env' });
-
 require('./models/User');
-
 
 const app = require('./app');
 app.set('port', process.env.PORT || 8008);
