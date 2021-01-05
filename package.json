@@ -18,7 +18,7 @@
   "homepage": "https://github.com/shitalthorat21/task3#readme",
   "dependencies": {
     "autoprefixer": "^9.7.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
